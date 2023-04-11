@@ -1,3 +1,5 @@
+import 'package:chatgpt_playground/constants/themes.dart';
+import 'package:chatgpt_playground/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +11,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false,
+      home: const ChatScreen(),
     );
   }
 }
