@@ -1,2 +1,3 @@
-# chatgpt_flutter
-ChatGPT Flutter Playground
+# chatgpt_playground
+
+A new Flutter project.
