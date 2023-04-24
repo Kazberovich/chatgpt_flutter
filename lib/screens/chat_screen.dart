@@ -1,4 +1,5 @@
 import 'package:chatgpt_playground/widgets/app_bar.dart';
+import 'package:chatgpt_playground/widgets/chat_item.dart';
 import 'package:chatgpt_playground/widgets/text_and_voice_field.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,10 @@ class ChatScreen extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemCount: 20,
-              itemBuilder: (context, index) => const Text('List'),
+              itemBuilder: (context, index) => const ChatItem(
+                  text:
+                      "text texttexttexttexttexttext texttexttexttexttext texttexttext",
+                  isMe: true),
             ),
           ),
           const Padding(
