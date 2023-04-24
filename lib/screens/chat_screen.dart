@@ -1,4 +1,4 @@
-import 'package:chatgpt_playground/widgets.dart/app_bar.dart';
+import 'package:chatgpt_playground/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
