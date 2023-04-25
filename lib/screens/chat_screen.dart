@@ -16,8 +16,9 @@ class ChatScreen extends StatelessWidget {
         children: [
           Expanded(
             child: Consumer(builder: (context, ref, child) {
-              final chats = ref.watch(chatProvider);
+              final chats = ref.watch(chatProvider).reversed.toList();
               return ListView.builder(
+                reverse: true,
                 itemCount: chats.length,
                 itemBuilder: (context, index) => ChatItem(
                     text: chats[index].message, isMe: chats[index].isMe),

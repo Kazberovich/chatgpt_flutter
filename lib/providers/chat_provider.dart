@@ -8,6 +8,10 @@ class ChatNotifier extends StateNotifier<List<ChatModel>> {
   void add(ChatModel chatModel) {
     state = [...state, chatModel];
   }
+
+  void removeTyping() {
+    state = state..removeWhere((chat) => chat.id == 'typingid');
+  }
 }
 
 final chatProvider = StateNotifierProvider<ChatNotifier, List<ChatModel>>(

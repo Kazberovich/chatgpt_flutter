@@ -20,6 +20,7 @@ class ChatItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment:
             isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           if (!isMe) ProfileContainer(isMe: isMe),
           if (!isMe)
