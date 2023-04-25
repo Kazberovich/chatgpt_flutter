@@ -2,12 +2,19 @@ import 'package:chatgpt_playground/widgets/text_and_voice_field.dart';
 import 'package:flutter/material.dart';
 
 class ToggleButton extends StatefulWidget {
+  final VoidCallback _sendTextMessage;
+  final VoidCallback _sendVoiceMessage;
+
   final InputMode _inputMode;
 
   const ToggleButton({
     super.key,
     required InputMode inputMode,
-  }) : _inputMode = inputMode;
+    required VoidCallback sendTextMessage,
+    required VoidCallback sendVoiceMessage,
+  })  : _inputMode = inputMode,
+        _sendTextMessage = sendTextMessage,
+        _sendVoiceMessage = sendVoiceMessage;
 
   @override
   State<ToggleButton> createState() => _ToggleButtonState();

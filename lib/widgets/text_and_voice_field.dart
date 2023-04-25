@@ -51,7 +51,15 @@ class _TextAndVoiceFieldState extends State<TextAndVoiceField> {
         const SizedBox(
           width: 10,
         ),
-        ToggleButton(inputMode: _inputMode),
+        ToggleButton(
+          inputMode: _inputMode,
+          sendTextMessage: () {
+            sendTextMessage(_messageController.text);
+          },
+          sendVoiceMessage: () {
+            sendVoiceMessage();
+          },
+        ),
       ],
     );
   }
@@ -61,4 +69,8 @@ class _TextAndVoiceFieldState extends State<TextAndVoiceField> {
       _inputMode = inputMode;
     });
   }
+
+  void sendTextMessage(String message) {}
+
+  void sendVoiceMessage() {}
 }
