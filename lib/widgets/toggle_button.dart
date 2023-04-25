@@ -30,7 +30,9 @@ class _ToggleButtonState extends State<ToggleButton> {
         shape: const CircleBorder(),
         padding: const EdgeInsets.all(15),
       ),
-      onPressed: () {},
+      onPressed: widget._inputMode == InputMode.text
+          ? widget._sendTextMessage
+          : widget._sendVoiceMessage,
       child: Icon(widget._inputMode == InputMode.text ? Icons.send : Icons.mic),
     );
   }

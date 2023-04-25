@@ -1,12 +1,12 @@
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 
+final String token = "TOKEN HERE";
+
 class AIHandler {
   final _openAI = OpenAI.instance.build(
-    token: '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',
-    baseOption: HttpSetup(
-      receiveTimeout: 20000,
-    ),
-  );
+      token: token,
+      baseOption: HttpSetup(receiveTimeout: 50000),
+      isLogger: true);
 
   void dispose() {
     _openAI.close();
@@ -14,7 +14,8 @@ class AIHandler {
 
   Future<String> getResponse(String message) async {
     try {
-      final request = CompleteText(prompt: message, model: kTranslateModelV3);
+      final request = CompleteText(
+          prompt: message, model: kTranslateModelV3, maxTokens: 200);
       final response = await _openAI.onCompleteText(request: request);
 
       if (response != null) {
@@ -22,7 +23,7 @@ class AIHandler {
       }
       return 'Something went wrong';
     } catch (e) {
-      return 'Bad response';
+      return e.toString();
     }
   }
 }
