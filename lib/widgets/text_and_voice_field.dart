@@ -106,7 +106,7 @@ class _TextAndVoiceFieldState extends ConsumerState<TextAndVoiceField> {
   }
 
   void sendVoiceMessage() async {
-    if (_voiceHandler.isSpeechEnabled) {
+    if (!_voiceHandler.isSpeechEnabled) {
       print('not supported');
       return;
     }

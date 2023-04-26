@@ -1,6 +1,6 @@
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 
-const String token = "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";
+const String token = "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";
 
 class AIHandler {
   final _openAI = OpenAI.instance.build(
